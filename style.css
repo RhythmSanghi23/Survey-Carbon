@@ -1,0 +1,16 @@
+/*
+Try dragging the brown circle around. The blue box marks the draggable area of the circle's center.
+
+At the bottom of the JS code, the 'draw' function is called. Try changing the input arguments to see what happens!
+*/
+body
+{
+    font-family: 'Lato', Arial, sans-serif;
+    font-size: 30px;
+
+    color: #414042;
+    background: #25bda8;
+}
+#widget {
+  border: 1px solid black;
+}
