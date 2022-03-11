@@ -13,4 +13,46 @@ body
 }
 #widget {
   border: 1px solid black;
+  padding: 30px;
 }
+
+#markerbounds {
+  position: relative;
+}
+
+#box {
+  background-color: lightsteelblue;
+  position: absolute;
+}
+
+#marker {
+  position: relative;
+  background-color: brown;
+  border-radius: 100px;
+}
+
+.coord {
+  font-family: serif;
+  font-size: 10px;
+  
+
+}
+
+.coord div {display: inline-block;}
+
+#y {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  position: relative;
+  width: 60px;
+  
+}
+
+#x {
+  position: relative;
+
+}
+
+
