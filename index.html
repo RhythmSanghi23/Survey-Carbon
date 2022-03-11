@@ -1,6 +1,6 @@
 <html lang="en"><head>
   <meta charset="UTF-8">
-  <title>CodePen - 2D Slider</title>
+  <title>Survey Form</title>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css"><link rel="stylesheet" href="./style.css">
 
 </head>
@@ -9,8 +9,9 @@
   action="https://script.google.com/macros/s/AKfycby4i-3DvXRLPnx4fg2f0JYe4JfC61RImOdgcXLaNgrs5J7hOAEzcLpT31qvN_10gIQ/exec">
   <input name="Email" type="email" placeholder="Email" required>
   <input name="Name" type="text" placeholder="Name" required>
+
   
-    <p>How would you rate our service?</p>
+    <p>How do you find our services </p>
 
 <!-- partial:index.partial.html -->
 <div id="widget" style="width: 270px;">
@@ -19,10 +20,22 @@
       <div id="marker" class="ui-draggable ui-draggable-handle" style="width: 20px; height: 20px; inset: -10px auto auto -10px;"></div>
     </div>
   </div>
+  <!--
   <div>
     <p id="coord" style="top: 160px;">x: 0<br> y: 1</p>
   </div>
-</div>
+  -->
+  <div class="coord" id="x">
+    <div id="xlabel">Business Impact: </div>
+    <div id="xvalue"></div>
+  </div>
+  <div class="coord" id="y">
+    <div id="ylabel">Stakeholders:</div>
+    <div id="yvalue"></div>
+  </div>
+</div> <br>
+<input name="X1" type="decimal" min="0" max="100" step="10" id="getx" /> <br>
+<input name="Y1" type="decimal" min="0" max="100" step="10"  id="gety" />
 <button>Submit</button>
   </form>
   <div class="base">
@@ -55,9 +68,10 @@
 }
 
 #coord {
+
   font-family: serif;
   font-size: 14px;
-  margin: 0px;
+  margin: 10px;
 }
 </style>
 <!-- partial -->
