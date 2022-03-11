@@ -2,7 +2,7 @@
 
 var slider = {
   
-  get_position: function() {
+  get_position: function() { //Marker position
     var marker_pos = $('#marker').position();
     var left_pos = marker_pos.left + slider.marker_size / 2;
     var top_pos = marker_pos.top + slider.marker_size / 2;
@@ -16,8 +16,15 @@ var slider = {
 
   },
   
-  display_position: function() {
-    document.getElementById("coord").innerHTML = 'x: ' + slider.position.x.toString() + '<br> y: ' + slider.position.y.toString();
+  display_position: function() {// coord x and y value 
+    //document.getElementById("coord").innerHTML = 'Business Impact: ' + slider.position.x.toString() + '<br> Stakeholder Impact: ' + slider.position.y.toString();
+    document.getElementById("getx").value =slider.position.x.toString();
+    document.getElementById("gety").value =slider.position.y.toString();
+    document.getElementById("xvalue").innerHTML = slider.position.x.toString();
+    document.getElementById("yvalue").innerHTML = slider.position.y.toString();
+
+    
+
   },
   
 
@@ -25,13 +32,14 @@ var slider = {
     
     if ((x_size === undefined) && (y_size === undefined) && (xmax === undefined) && (ymax === undefined) && (marker_size === undefined) && (round_to === undefined)) {
       x_size = 2500;
-      y_size = 150;
-      xmax = 1;
-      ymax = 1;
+      y_size = 1500;
+      xmax = 100;
+      ymax = 100;
       marker_size = 20;
       round_to = 2;
     };
     
+    slider.strokeStyle='black';
     slider.marker_size = marker_size;
     slider.height = y_size;
     slider.width = x_size;
@@ -42,6 +50,8 @@ var slider = {
       x: round_to,
       y: round_to,
     };
+
+
     
     $("#markerbounds").css({
       "width": (x_size + marker_size).toString() + 'px',
@@ -66,7 +76,15 @@ var slider = {
     $("#widget").css({
       "width": (x_size + marker_size).toString() + 'px',
     });
+    $('#y').css({
+      "top": -y_size / 2 - 45,
+      "left": -36,
+    })
     
+    $('#x').css({
+      "left": x_size / 2 - 18,
+      "top": -3,
+    })
     slider.get_position();
     slider.display_position();
     
@@ -85,7 +103,7 @@ $("#marker").draggable({
 //syntax for rendering is:
 //  slider.render(width, height, width-range, height-range, marker size, output decimal places)
 
-slider.draw(150,150,1,1,20,2);
+slider.draw(150,150,100,100,20,2);
 
 // check to make sure the defaults work:
 //slider.draw();
